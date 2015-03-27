@@ -4622,6 +4622,12 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                 break;
             }
 
+           //enable wake on homebutton permanently
+            case KeyEvent.KEYCODE_HOME:
+                if (down && !interactive) {
+                    isWakeKey = true;
+                }
+                break;
             case KeyEvent.KEYCODE_ENDCALL: {
                 result &= ~ACTION_PASS_TO_USER;
                 if (down) {
